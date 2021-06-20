@@ -1,10 +1,10 @@
-# Foobar
+# Lazy fucking webapp
 
-Foobar is a Python library for dealing with word pluralization.
+it's just another weird CRUD web app...
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [npm](https://nodejs.dev/) to install foobar.
 
 ```bash
 npm install
