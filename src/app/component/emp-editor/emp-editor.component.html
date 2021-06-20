@@ -1,0 +1,124 @@
+
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['name'].errors?.required  " role="alert">
+    <strong>Error!</strong> You must Enter Name
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['email'].errors?.required " role="alert">
+    <strong>Error!</strong> You must Enter Email
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['email'].errors?.email " role="alert">
+    <strong>Error!</strong> Email must be valid!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['DOB'].errors?.required " role="alert">
+    <strong>Error!</strong> Date Of Birth is required!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['YOE'].errors?.required " role="alert">
+    <strong>Error!</strong> Year Of Experience is required!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['gender'].errors?.required  " role="alert">
+    <strong>Error!</strong> Gender is required!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['YOE'].errors?.min " role="alert">
+    <strong>Error!</strong> Year Of Experience Cannot be below 0!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="submit && empForm.controls['YOE'].errors?.max " role="alert">
+    <strong>Error!</strong> Year Of Experience cannot be larger than 5
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<h1>Employee editor</h1>
+<form (ngSubmit) = 'onSubmit()' [formGroup] = 'empForm'>
+    
+    <div class="form-group row">
+        <label for="name" class="col-4 col-form-label">Name</label>
+        <div class="col-8">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-address-card"></i>
+                    </div>
+                </div>
+                <input id="name" name="name" type="text" class="form-control" required="required" formControlName= 'name'>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="text" class="col-4 col-form-label">Email</label>
+        <div class="col-8">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input id="text" name="text" placeholder="Your email here" type="email" class="form-control"
+                    required="required" formControlName = 'email'>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-4">Gender</label>
+        <div class="col-8">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input name="gender" id="radio_0" type="radio" class="custom-control-input" value="0"
+                    required="required" formControlName = 'gender'>
+                <label for="radio_0" class="custom-control-label" >Male</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input name="gender" id="radio_1" type="radio" class="custom-control-input" value="1"
+                    required="required" formControlName = 'gender'>
+                <label for="radio_1" class="custom-control-label">Female</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="text" class="col-4 col-form-label">Date Of Birth</label>
+        <div class="col-8">
+            <div class="input-group date">
+                <input type="date" class="form-control" value="12-02-2012" formControlName = 'DOB'>
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="yoe" class="col-4 col-form-label">Year Of Experience</label>
+        <div class="col-8">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-bell"></i>
+                    </div>
+                </div>
+                <input id="yoe" name="yoe" type="number" min=1  max=7 class="form-control" formControlName = 'YOE'>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>  
+    </div>
+
+</form>
+

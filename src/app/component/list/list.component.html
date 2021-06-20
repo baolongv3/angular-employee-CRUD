@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Sex</td>
+            <td>DOB</td>
+            <td>Yrs Of Exp</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let employee of employees$ | async; index as i '>
+            <td>{{i}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.sex == false? 'Male' : 'Female'}}</td>
+            <td>{{employee.DOB}}</td>
+            <td>{{employee.YOE  }}</td>
+            <td *ngIf = 'user.isAdmin'><button class="btn btn-warning" [routerLink] = '["edit",employee.Id]'>Update</button><button class="btn btn-danger" (click) = 'delete(employee)'>Delete</button></td>
+        </tr>
+    </tbody>
+</table>
