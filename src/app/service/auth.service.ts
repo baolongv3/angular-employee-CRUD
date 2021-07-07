@@ -40,11 +40,11 @@ export class AuthService {
   private updateUserData(user: any){
     const userRef = this.db.doc(`users/${user.uid}`);
     const data = <User>{
-      name : user.name,
+      name : user.displayName,
       email : user.email,
       photoURL : user.photoURL
     }
-    return this.db.doc(`users/${user.id}`).set(data, {merge : true});
+    return userRef.set(data, {merge : true});
   }
 
 
