@@ -1,6 +1,6 @@
-# Lazy fucking webapp
+# Angular Employee CRUD App
 
-it's just another weird CRUD web app...
+it's an app for demonstrating how firebase works 
 
 ## Installation
 
